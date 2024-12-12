@@ -64,7 +64,6 @@ public class Main {
 
         std1.Record();
 
-        std1.CalcRecords();
 
 
     }
