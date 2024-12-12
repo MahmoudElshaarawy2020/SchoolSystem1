@@ -34,15 +34,26 @@ class Student extends Person {
     }
 
 
-    public float CalcGradesPercentage(){
-        float total = 300;
-        float totalGrades = 0;
-        for(float grades : grades){
-            totalGrades += grades;
-        }
+    public void CalcGradesPercentage(float total) {
+        try {
+            float totalGrades = 0;
+            if (total == 0) {
+                throw new ArithmeticException("Total cannot be zero. Division by zero is not allowed.");
+            }
+            else {
+                for (float grade : grades) {
+                    totalGrades += grade;
+                }
+                System.out.println(grades.isEmpty() ? 0 : (totalGrades / total) * 100);
+            }
 
-        return grades.isEmpty() ? 0 : (totalGrades / total) * 100;
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
+
+
+
 
     public void EditStudentData(
             int attendance,

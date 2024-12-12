@@ -59,7 +59,7 @@ public class Main {
         std1.EditStudentData(4, "Ahmed", 5545);
         std1.displayInstructorDetails();
 
-        System.out.println(std1.CalcGradesPercentage());
+        std1.CalcGradesPercentage(300);
 
 
     }
