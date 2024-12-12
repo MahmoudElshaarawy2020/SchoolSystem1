@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Student extends Person {
     private int attendance;
@@ -39,8 +40,7 @@ class Student extends Person {
             float totalGrades = 0;
             if (total == 0) {
                 throw new ArithmeticException("Total cannot be zero. Division by zero is not allowed.");
-            }
-            else {
+            } else {
                 for (float grade : grades) {
                     totalGrades += grade;
                 }
@@ -53,25 +53,23 @@ class Student extends Person {
     }
 
 
-
-
     public void EditStudentData(
             int attendance,
             ArrayList<String> courses,
             ArrayList<Float> grades
-    ){
+    ) {
         this.attendance = attendance;
         this.courses = courses;
         this.grades = grades;
     }
 
-    public void EditStudentData(int attendance, String name, int id){
+    public void EditStudentData(int attendance, String name, int id) {
         this.attendance = attendance;
         setId(id);
         setName(name);
     }
 
-    public void DeleteStudentData(){
+    public void DeleteStudentData() {
         setName("None");
         setId(0);
         this.attendance = 0;
@@ -87,5 +85,21 @@ class Student extends Person {
         System.out.println("Grades : " + grades);
     }
 
+    public void Record() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of grades you want to record:");
+
+        // Read the number of grades to be entered
+        int numberOfGrades = input.nextInt();
+
+        // Loop to input grades
+        for (int i = 0; i < numberOfGrades; i++) {
+            System.out.print("Enter grade " + (i + 1) + ": ");
+            double grade = input.nextDouble();
+            grades.add((float) grade); // Add the input grade to the grades list
+        }
+
+        System.out.println("Grades have been recorded successfully!");
+    }
 
 }

@@ -11,7 +11,6 @@ class Instructor extends Person {
     }
 
 
-
     public Instructor(String name, int id, String courseName) {
         super(name, id);
         this.courseName = courseName;

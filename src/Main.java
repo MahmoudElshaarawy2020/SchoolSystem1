@@ -62,5 +62,10 @@ public class Main {
         std1.CalcGradesPercentage(300);
 
 
+        std1.Record();
+
+        std1.CalcRecords();
+
+
     }
 }
